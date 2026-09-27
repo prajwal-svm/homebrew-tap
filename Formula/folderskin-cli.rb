@@ -1,12 +1,23 @@
 class FolderskinCli < Formula
   desc "Command-line tool for custom folder icons, skin packs and local AI painting"
   homepage "https://folderskin.app/"
-  version "0.1.0"
   license "GPL-3.0-only"
 
+  livecheck do
+    url "https://github.com/prajwal-svm/folderskin/releases"
+    regex(%r{href=["']?[^"' >]*?/tag/cli-v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
+  end
+
   on_macos do
-    url "https://github.com/prajwal-svm/folderskin/releases/download/cli-v0.1.0/folderskin-cli-0.1.0-macos-universal.tar.gz"
-    sha256 "7351b73f2f89ee591c285bc8ebad6e81d8609f4e6d79af06fc00c0977b476983"
+    on_arm do
+      url "https://github.com/prajwal-svm/folderskin/releases/download/cli-v0.1.0/folderskin-cli-0.1.0-macos-universal.tar.gz"
+      sha256 "7351b73f2f89ee591c285bc8ebad6e81d8609f4e6d79af06fc00c0977b476983"
+    end
+    on_intel do
+      url "https://github.com/prajwal-svm/folderskin/releases/download/cli-v0.1.0/folderskin-cli-0.1.0-macos-universal.tar.gz"
+      sha256 "7351b73f2f89ee591c285bc8ebad6e81d8609f4e6d79af06fc00c0977b476983"
+    end
   end
 
   on_linux do
@@ -18,12 +29,6 @@ class FolderskinCli < Formula
       url "https://github.com/prajwal-svm/folderskin/releases/download/cli-v0.1.0/folderskin-cli-0.1.0-linux-aarch64.tar.gz"
       sha256 "a72d59edf320971d2a48c2b01b5b3d3db333a88afd244b1b07bef45e2fcaebbe"
     end
-  end
-
-  livecheck do
-    url "https://github.com/prajwal-svm/folderskin/releases"
-    regex(%r{href=["']?[^"' >]*?/tag/cli-v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
   end
 
   def install
