@@ -4,9 +4,9 @@ class FolderskinCli < Formula
   license "GPL-3.0-only"
 
   livecheck do
-    url "https://github.com/prajwal-svm/folderskin/releases"
-    regex(%r{href=["']?[^"' >]*?/tag/cli-v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^cli-v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   on_macos do
