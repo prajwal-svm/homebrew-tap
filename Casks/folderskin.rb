@@ -1,6 +1,6 @@
 cask "folderskin" do
-  version "0.1.12"
-  sha256 "5f984ffe5a1be3fca41becdafbd1f757234f466195c48d84878487fb76bb10e5"
+  version "0.1.13"
+  sha256 "b05d6c5c9cb28e22a8b16790afffcd26aa1107a21a87e862f2b47ccfcba75530"
 
   url "https://github.com/prajwal-svm/folderskin/releases/download/v#{version}/FolderSkin_#{version}_universal.dmg",
       verified: "github.com/prajwal-svm/folderskin/"
